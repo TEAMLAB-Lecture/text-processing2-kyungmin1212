@@ -73,7 +73,7 @@ def to_camel_case(underscore_str):
             "alreadyCamel"
     """
     if "_" in underscore_str:
-        while True:
+        while len(underscore_str)>=1:
             if underscore_str[0]=="_":
                 underscore_str=underscore_str[1:]
             else:
@@ -81,7 +81,7 @@ def to_camel_case(underscore_str):
 
         underscore_str=underscore_str[::-1]
 
-        while True:
+        while len(underscore_str)>=1:
             if underscore_str[0]=="_":
                 underscore_str=underscore_str[1:]
             else:
