@@ -72,34 +72,37 @@ def to_camel_case(underscore_str):
             >>> tp2.to_camel_case(underscore_str3)
             "alreadyCamel"
     """
-    while True:
-        if underscore_str[0]=="_":
-            underscore_str=underscore_str[1:]
-        else:
-            break
+    if "_" in underscore_str:
+        while True:
+            if underscore_str[0]=="_":
+                underscore_str=underscore_str[1:]
+            else:
+                break
 
-    underscore_str=underscore_str[::-1]
+        underscore_str=underscore_str[::-1]
 
-    while True:
-        if underscore_str[0]=="_":
-            underscore_str=underscore_str[1:]
-        else:
-            break
-    
-    underscore_str=underscore_str[::-1]
+        while True:
+            if underscore_str[0]=="_":
+                underscore_str=underscore_str[1:]
+            else:
+                break
+        
+        underscore_str=underscore_str[::-1]
 
-    result=underscore_str.split("_")
-    new_result=[]
+        result=underscore_str.split("_")
+        new_result=[]
 
-    for i in result:
-        if i !="":
-            new_result.append(i)
+        for i in result:
+            if i !="":
+                new_result.append(i)
 
-    for i in range(len(new_result)):
-        new_result[i]=new_result[i].lower()
+        for i in range(len(new_result)):
+            new_result[i]=new_result[i].lower()
 
-    for i in range(1,len(new_result)):
-        new_result[i]=new_result[i].capitalize()
+        for i in range(1,len(new_result)):
+            new_result[i]=new_result[i].capitalize()
 
-    camelcase_str = "".join(new_result)
+        camelcase_str = "".join(new_result)
+    else:
+        camelcase_str=underscore_str
     return camelcase_str
